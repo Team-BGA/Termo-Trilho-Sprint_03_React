@@ -1,7 +1,7 @@
 "use client"
 
 import { createContext, useState, useContext, type ReactNode } from "react"
-import type { MaintenanceRequest } from "@/components/maintenance-modal"
+import type { MaintenanceRequest } from "@/components/maintenace-modal"
 
 interface MaintenanceContextType {
   maintenanceRequests: MaintenanceRequest[]
@@ -32,3 +32,4 @@ export function useMaintenanceContext() {
   }
   return context
 }
+

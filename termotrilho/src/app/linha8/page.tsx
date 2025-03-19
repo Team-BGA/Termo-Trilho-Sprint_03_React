@@ -2,7 +2,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { MessageCircle, LogOut } from "lucide-react"
-import MaintenanceModal from "@/components/maintenance-modal"
+import MaintenanceModal from "@/components/maintenace-modal"
 import { useMaintenanceContext } from "@/context/maintenance-context"
  
 const stations = [

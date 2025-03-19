@@ -1,16 +1,16 @@
 "use client"
- 
+
 import type React from "react"
 import { useState } from "react"
 import { X } from "lucide-react"
- 
+
 interface MaintenanceModalProps {
   isOpen: boolean
   onClose: () => void
   currentLine: string
   onSubmit: (data: MaintenanceRequest) => void
 }
- 
+
 export interface MaintenanceRequest {
   location: string
   description: string
@@ -18,17 +18,17 @@ export interface MaintenanceRequest {
   line: string
   date: Date
 }
- 
+
 export default function MaintenanceModal({ isOpen, onClose, currentLine, onSubmit }: MaintenanceModalProps) {
   const [location, setLocation] = useState("")
   const [description, setDescription] = useState("")
   const [alertLevel, setAlertLevel] = useState("1")
- 
+
   if (!isOpen) return null
- 
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
- 
+
     const newRequest: MaintenanceRequest = {
       location,
       description,
@@ -36,18 +36,18 @@ export default function MaintenanceModal({ isOpen, onClose, currentLine, onSubmi
       line: currentLine,
       date: new Date(),
     }
- 
+
     onSubmit(newRequest)
- 
+
     // Resetar formulário
 setLocation("");
 setDescription("");
 setAlertLevel("1");
- 
+
 // Fechar modal
 onClose();
 };
- 
+
 // Gerar opções de localização com base na linha atual
 const locationOptions =
   currentLine === "Linha 8"
@@ -97,7 +97,7 @@ const locationOptions =
         "Grajaú",
         "Vila Natal",
       ];
- 
+
 return (
   <div className="modal-overlay">
     <div className="modal">
@@ -105,9 +105,9 @@ return (
       <button onClick={onClose} className="modal-close">
         <X size={24} />
       </button>
- 
+
       <h2 className="modal-title">Acionando Manutenção</h2>
- 
+
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label className="form-label">Localização trilho:</label>
@@ -125,7 +125,7 @@ return (
             ))}
           </select>
         </div>
- 
+
         <div className="form-group">
           <label className="form-label">Descrição do problema:</label>
           <textarea
@@ -136,7 +136,7 @@ return (
             required
           />
         </div>
- 
+
         <div className="form-group">
           <label className="form-label">Nível Alerta:</label>
           <select
@@ -152,7 +152,7 @@ return (
             ))}
           </select>
         </div>
- 
+
         <div className="form-actions">
           <button type="submit" className="btn-blue">
             Acionar
@@ -163,3 +163,4 @@ return (
   </div>
 );
 }
+
