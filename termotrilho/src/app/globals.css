@@ -1,3 +1,5 @@
+
+
 /* Reset e estilos base */
 * {
     margin: 0;
@@ -158,7 +160,7 @@
   .welcome-text p {
     font-size: 1.25rem;
   }
-
+  
   /* Estilos do Dashboard */
   .app-container {
     display: flex;
@@ -344,3 +346,520 @@
     object-fit: contain;
     transform: translate(1rem, 1rem);
   }
+  
+  /* Estilos das Páginas de Linha */
+  .linha-content {
+    display: flex;
+    flex-direction: column;
+    height: 170%;
+  }
+  
+  .train-line-container {
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+    padding: 2rem;
+  }
+  
+  .vertical-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1rem;
+    transform: translateX(-50%);
+    border-radius: 9999px;
+    z-index: 5;
+  }
+  
+  .vertical-line.gray {
+    background-color: #9ca3af;
+  }
+  
+  .vertical-line.teal {
+    background-color: #2dd4bf;
+  }
+  
+  .stations-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 1200px;
+    padding: 2rem 0;
+    z-index: 10;
+    margin: 0 auto;
+  }
+  
+  .station {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    position: relative;
+    width: 100%;
+  }
+  
+  .station-name {
+    color: white;
+    font-size: 0.875rem;
+    text-align: right;
+    width: 10rem;
+    margin-right: 1rem;
+  }
+  
+  .station-dot {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #d1d1d1;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .station-dot.connected {
+    background-color: #ef4444;
+  }
+  
+  .station-spacer {
+    width: 10rem;
+    margin-left: 1rem;
+  }
+  
+  .connector {
+    position: absolute;
+    width: 0.5rem;
+    height: 4rem;
+    background-color: #ef4444;
+    left: 49,5%;
+    
+    transform: translateX(50%);
+    transform: translateY(50%);
+    z-index: 5;
+    
+    
+  }
+  
+  .maintenance-button-container {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    background-color: #042841;
+    border-top: 1px solid #1f4971;
+  }
+  
+  .maintenance-button {
+    background-color: #083859;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 1rem 3rem;
+    border-radius: 0.375rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .maintenance-button:hover {
+    background-color: #0a4a75;
+  }
+  
+  /* Estilos do Modal */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+  }
+  
+  .modal {
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 28rem;
+    padding: 1.5rem;
+    position: relative;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #6b7280;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .modal-close:hover {
+    color: #111827;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-label {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-select {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #d1d1d1;
+    border: none;
+    border-radius: 0.25rem;
+  }
+  
+  .form-textarea {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #d1d1d1;
+    border: none;
+    border-radius: 0.25rem;
+    resize: vertical;
+    min-height: 6rem;
+  }
+  
+  .form-select-small {
+    width: 10rem;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+  }
+  
+  .btn-blue {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-blue:hover {
+    background-color: #3367d6;
+  }
+
+  /* ===== RESPONSIVE STYLES ===== */
+
+/* Laptop (1366 x 768) */
+@media screen and (max-width: 1366px) {
+  /* pagina de login */
+  .brand-container {
+    display: flex;
+    width: 50%;
+  }
+
+  .brand-logo h2 {
+    font-size: 3.25rem;
+  }
+
+  .welcome-text h3 {
+    font-size: 2rem;
+  }
+
+  /* Dashboard */
+  .welcome-box {
+    max-width: 28rem;
+    margin-top: 4rem;
+  }
+
+  .action-buttons {
+    left: 20%;
+  }
+
+  .action-button {
+    padding: 0.875rem 2.5rem;
+    font-size: 1.125rem;
+  }
+
+  /* pagina das linhas */
+  .stations-container {
+    min-height: 1000px;
+  }
+
+  .station {
+    margin: 0.75rem 0;
+  }
+
+  .linha-content{
+    height: 180%
+  }
+}
+
+/* Tablet (834 x 1194) */
+@media screen and (max-width: 834px) {
+  /* pagina de login */
+  .login-container {
+    flex-direction: column-reverse;
+  }
+
+  .login-form-container {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .brand-container {
+    width: 100%;
+    padding: 2rem 1rem;
+    min-height: 40vh;
+  }
+
+  .brand-logo {
+    margin-bottom: 2rem;
+  }
+
+  .brand-logo h2 {
+    font-size: 2.75rem;
+  }
+
+  .welcome-text h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .welcome-text p {
+    font-size: 1.125rem;
+  }
+
+  /* Dashboard */
+  .sidebar {
+    width: 12rem;
+  }
+
+  .sidebar-logo .logo-text {
+    font-size: 1.5rem;
+  }
+
+  .nav-item {
+    padding: 0.875rem;
+    font-size: 1rem;
+  }
+
+  .welcome-box {
+    max-width: 90%;
+    margin-top: 2rem;
+    padding: 1.5rem;
+  }
+
+  .welcome-box h1 {
+    font-size: 1.5rem;
+  }
+
+  .welcome-box p {
+    font-size: 1rem;
+  }
+
+  .action-buttons {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin: 2rem auto;
+    z-index: 10;
+  }
+
+  .action-button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
+
+  .train-container {
+    width: 100%;
+    height: 50%;
+  }
+
+  /* pagina das linhas */
+  .train-line-container {
+    padding: 1rem;
+  }
+
+  .station-name {
+    width: 8rem;
+    font-size: 0.75rem;
+  }
+
+  .station-spacer {
+    width: 8rem;
+  }
+
+  .station-dot {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .maintenance-button {
+    font-size: 1rem;
+    padding: 0.75rem 2rem;
+  }
+  .linha-content{
+    height: 100%
+  }
+
+  /* Modal */
+  .modal {
+    max-width: 90%;
+    padding: 1.25rem;
+  }
+
+  .form-label {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile (700 x 1186) */
+@media screen and (max-width: 700px) {
+  /* pagina de login */
+  .login-form h1 {
+    font-size: 1.75rem;
+  }
+
+  .brand-container {
+    min-height: 30vh;
+  }
+
+  .brand-logo h2 {
+    font-size: 2.25rem;
+  }
+
+  .welcome-text h3 {
+    font-size: 1.5rem;
+  }
+
+  /* Dashboard */
+  .app-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .sidebar-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-menu {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 0.5rem;
+  }
+
+  .nav-item {
+    white-space: nowrap;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .sidebar-footer {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .main-content {
+    height: calc(100vh - 150px);
+  }
+
+  .welcome-box {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+  }
+
+  .welcome-box h1 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .welcome-box p {
+    font-size: 0.875rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem auto;
+  }
+
+  .train-container {
+    display: none;
+  }
+
+  /* pagina das linhas */
+  .linha-content {
+    height: calc(100vh - 150px);
+  }
+
+  .station-name {
+    width: 6rem;
+    font-size: 0.75rem;
+  }
+
+  .station-spacer {
+    width: 6rem;
+  }
+
+  .station-dot {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .maintenance-button-container {
+    padding: 1rem;
+  }
+
+  .maintenance-button {
+    font-size: 0.875rem;
+    padding: 0.75rem 1.5rem;
+  }
+ 
+
+  /* Modal */
+  .modal {
+    padding: 1rem;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-label {
+    font-size: 0.875rem;
+  }
+
+  .form-select-small {
+    width: 8rem;
+  }
+
+  .btn-blue {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+
+  
+  
